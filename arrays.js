@@ -3,10 +3,8 @@
 
 // 1. printIndices
 function printIndices(items) {
-let i = 0
 for (item in items) {
-  console.log(item, i);
-  i++;
+  console.log(items[item], item);
 }
 }
 
