@@ -3,14 +3,38 @@
 
 // 1. isHometown
 
-// Define your function here
+function isHometown(town) {
+
+    return(town === 'Saginaw');
+}
 
 
 // 2. getFullName
 
-// Define your function here
+function getFullName(firstName, lastName) {
+    
+    const fullName = `${firstName} ${lastName}`;
+    return(fullName);
+}
 
 
 // 3. calculateTotal
 
-// Define your function here
+function calculateTotal(basePrice, state, tax = 0.05) {
+    const subtotal = basePrice * (tax + 1);
+    let fee = 0
+
+    if (state === 'CA') {
+        fee = subtotal * .03;
+    } else if (state === 'PA') {
+        fee = 2;
+    }
+    else if (state === 'MA') {
+        if (basePrice <= 100) {
+            fee = 1;
+        } else {
+            fee = 3;
+        } 
+    }
+    return (subtotal + fee)
+}
